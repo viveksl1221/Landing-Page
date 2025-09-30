@@ -1,8 +1,40 @@
 /* Dubai IT Business Landing Page - External Styles */
 
+/* CSS Variables for Theme Switching */
+:root {
+    /* Light Theme Colors */
+    --bg-primary: #f9fafb;
+    --bg-secondary: #ffffff;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --border-color: #e5e7eb;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --card-bg: #ffffff;
+    --gradient-start: #1a73e8;
+    --gradient-end: #00bfff;
+}
+
+[data-theme="dark"] {
+    /* Dark Theme Colors */
+    --bg-primary: #0a0f1c;
+    --bg-secondary: #1a2332;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --card-bg: #1a2332;
+    --gradient-start: #10b981;
+    --gradient-end: #3b82f6;
+}
+
 /* Base Styles */
 body { 
-    font-family: 'Inter', sans-serif; 
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Chart Container */
@@ -46,7 +78,7 @@ body {
 
 /* Gradient Text */
 .gradient-text {
-    background: linear-gradient(90deg, #1a73e8, #00bfff);
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -503,4 +535,336 @@ body {
         padding: 1rem 1.5rem;
         font-size: 1.1rem;
     }
+}
+
+/* Dark Theme Styles - Exclude Hero Section */
+[data-theme="dark"] .bg-gray-50:not(.hero-bg *) {
+    background-color: var(--bg-primary) !important;
+}
+
+/* Dark Theme Gradient Text for Headings */
+[data-theme="dark"] h1:not(.hero-bg h1),
+[data-theme="dark"] h2:not(.hero-bg h2),
+[data-theme="dark"] h3:not(.hero-bg h3) {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Dark Theme Gradient Text for Specific Elements */
+[data-theme="dark"] .gradient-text {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Dark Theme Regular Text Colors */
+[data-theme="dark"] .text-gray-600:not(.hero-bg *),
+[data-theme="dark"] .text-gray-700:not(.hero-bg *),
+[data-theme="dark"] .text-gray-800:not(.hero-bg *),
+[data-theme="dark"] .text-gray-900:not(.hero-bg *) {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .bg-white:not(.hero-bg *) {
+    background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .text-gray-600:not(.hero-bg *) {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .text-gray-700:not(.hero-bg *) {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .text-gray-500:not(.hero-bg *) {
+    color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .text-gray-800:not(.hero-bg *) {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .text-gray-900:not(.hero-bg *) {
+    color: var(--text-primary) !important;
+}
+
+/* Dark Theme Gradient Text for Specific Sections */
+[data-theme="dark"] #value-prop h2,
+[data-theme="dark"] #social-proof h2,
+[data-theme="dark"] #cost-comparison h2,
+[data-theme="dark"] #process h2,
+[data-theme="dark"] #final-cta h2 {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Dark Theme Gradient Text for Cards */
+[data-theme="dark"] .grid h3,
+[data-theme="dark"] .w-full h3 {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+[data-theme="dark"] .border-gray-100:not(.hero-bg *) {
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .border-gray-200:not(.hero-bg *) {
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .border-gray-300:not(.hero-bg *) {
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .shadow-sm:not(.hero-bg *) {
+    box-shadow: 0 1px 2px 0 var(--shadow-color) !important;
+}
+
+[data-theme="dark"] .hover\:shadow-md:hover:not(.hero-bg *) {
+    box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color) !important;
+}
+
+[data-theme="dark"] .bg-gray-900 {
+    background-color: #0a0a0a !important;
+}
+
+[data-theme="dark"] .text-gray-400:not(.hero-bg *) {
+    color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .bg-blue-600:not(.hero-bg *) {
+    background-color: var(--gradient-start) !important;
+}
+
+[data-theme="dark"] .text-blue-100:not(.hero-bg *) {
+    color: #dbeafe !important;
+}
+
+[data-theme="dark"] .text-blue-200:not(.hero-bg *) {
+    color: #bfdbfe !important;
+}
+
+[data-theme="dark"] .hover\:bg-gray-100:hover:not(.hero-bg *) {
+    background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .bg-green-50:not(.hero-bg *) {
+    background-color: rgba(34, 197, 94, 0.1) !important;
+}
+
+[data-theme="dark"] .text-green-700:not(.hero-bg *) {
+    color: #22c55e !important;
+}
+
+[data-theme="dark"] .border-green-200:not(.hero-bg *) {
+    border-color: rgba(34, 197, 94, 0.3) !important;
+}
+
+[data-theme="dark"] .border-green-400:not(.hero-bg *) {
+    border-color: rgba(34, 197, 94, 0.5) !important;
+}
+
+[data-theme="dark"] .text-green-100:not(.hero-bg *) {
+    color: #dcfce7 !important;
+}
+
+/* Dark Theme Gradient Text for Stats and Special Elements */
+[data-theme="dark"] .text-6xl,
+[data-theme="dark"] .text-7xl {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Dark Theme Gradient Text for Uppercase Text */
+[data-theme="dark"] .uppercase {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Dark Theme Toggle Button */
+[data-theme="dark"] #themeToggle {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] #themeToggle:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Dark Theme Chart Colors */
+[data-theme="dark"] .chart-container {
+    background-color: var(--card-bg);
+    border-radius: 0.75rem;
+    padding: 1rem;
+}
+
+/* Dark Theme Chart Text Colors - Handled in JavaScript */
+
+/* Dark Theme Chart Title */
+[data-theme="dark"] .chart-container {
+    color: white !important;
+}
+
+[data-theme="dark"] .chart-container * {
+    color: white !important;
+}
+
+/* Dark Theme Cost Comparison Section */
+[data-theme="dark"] #cost-comparison {
+    background-color: var(--bg-primary) !important;
+}
+
+[data-theme="dark"] #cost-comparison h2 {
+    color: white !important;
+}
+
+[data-theme="dark"] #cost-comparison p {
+    color: white !important;
+}
+
+/* Dark Theme Form Success Message */
+[data-theme="dark"] #formSuccessMessage {
+    background-color: rgba(34, 197, 94, 0.15);
+    border-color: rgba(34, 197, 94, 0.4);
+    color: #22c55e;
+}
+
+/* Dark Theme Analysis Result */
+[data-theme="dark"] #analysisResult {
+    background-color: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Dark Theme Loading Indicator */
+[data-theme="dark"] #loadingIndicator {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] #loadingIndicator p {
+    color: var(--text-secondary);
+}
+
+/* Dark Theme Process Steps */
+[data-theme="dark"] .w-full.bg-gray-50:not(.hero-bg *) {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .w-full.bg-gray-50 h3:not(.hero-bg *) {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .w-full.bg-gray-50 p:not(.hero-bg *) {
+    color: var(--text-secondary) !important;
+}
+
+/* Dark Theme Arrow */
+[data-theme="dark"] .text-gray-300:not(.hero-bg *) {
+    color: var(--text-muted) !important;
+}
+
+/* Dark Theme Testimonial */
+[data-theme="dark"] .bg-gray-50.p-8:not(.hero-bg *) {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .bg-gray-50.p-8 p:not(.hero-bg *) {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .bg-gray-50.p-8 .font-semibold:not(.hero-bg *) {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .bg-gray-50.p-8 .text-sm:not(.hero-bg *) {
+    color: var(--text-muted) !important;
+}
+
+/* Dark Theme Stats */
+[data-theme="dark"] .text-blue-600:not(.hero-bg *) {
+    color: var(--gradient-start) !important;
+}
+
+[data-theme="dark"] .text-blue-500:not(.hero-bg *) {
+    color: var(--gradient-start) !important;
+}
+
+[data-theme="dark"] .text-blue-600.uppercase:not(.hero-bg *) {
+    color: var(--gradient-start) !important;
+}
+
+/* Dark Theme Value Prop Cards */
+[data-theme="dark"] .grid > div:not(.hero-bg *) {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .grid > div h3:not(.hero-bg *) {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .grid > div p:not(.hero-bg *) {
+    color: var(--text-secondary) !important;
+}
+
+/* Dark Theme Icons */
+[data-theme="dark"] .text-blue-600:not(.hero-bg *) {
+    color: var(--gradient-start) !important;
+}
+
+/* Dark Theme Final CTA Section */
+[data-theme="dark"] #final-cta {
+    background: var(--bg-primary) !important;
+    border-top: 2px solid var(--gradient-start);
+    border-bottom: 2px solid var(--gradient-start);
+}
+
+
+[data-theme="dark"] #final-cta p {
+    color: #e2e8f0 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] #final-cta a {
+    background: var(--gradient-start) !important;
+    color: white !important;
+    border: none;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] #final-cta a:hover {
+    background: var(--gradient-end) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+[data-theme="dark"] #final-cta .text-sm {
+    color: #cbd5e1 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth transitions for theme switching */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }

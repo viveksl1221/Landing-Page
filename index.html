@@ -16,7 +16,14 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800" data-theme="light">
+
+    <!-- Theme Toggle Button -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="themeToggle" class="bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30 rounded-full p-3 text-white hover:bg-opacity-30 transition-all duration-300 shadow-lg">
+            <span id="themeIcon" class="text-2xl">🌙</span>
+        </button>
+    </div>
 
     <main>
         <section id="hero" class="hero-bg">
@@ -257,6 +264,10 @@
 
             // --- Chart.js Visualization Logic ---
             const ctx = document.getElementById('costChart').getContext('2d');
+            
+            // Check if dark mode is active
+            const isDarkMode = document.body.getAttribute('data-theme') === 'dark';
+            
             const costChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -287,15 +298,22 @@
                     scales: {
                         x: {
                             stacked: true,
-                            grid: { display: false }
+                            grid: { display: false },
+                            ticks: {
+                                color: isDarkMode ? 'white' : '#666'
+                            }
                         },
                         y: {
                             stacked: true,
                             beginAtZero: true,
                             ticks: {
+                                color: isDarkMode ? 'white' : '#666',
                                 callback: function(value, index, values) {
                                     return 'AED ' + value.toLocaleString();
                                 }
+                            },
+                            grid: {
+                                color: isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
                             }
                         }
                     },
@@ -303,9 +321,18 @@
                         title: {
                             display: true,
                             text: 'Estimated First-Year Costs (AED)',
-                            font: { size: 16 }
+                            font: { size: 16, weight: 'bold' },
+                            color: isDarkMode ? 'white' : '#333'
+                        },
+                        legend: {
+                            labels: {
+                                color: isDarkMode ? 'white' : '#666'
+                            }
                         },
                         tooltip: {
+                            backgroundColor: isDarkMode ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.9)',
+                            titleColor: isDarkMode ? 'white' : '#333',
+                            bodyColor: isDarkMode ? 'white' : '#333',
                             callbacks: {
                                 label: function(context) {
                                     let label = context.dataset.label || '';
@@ -397,6 +424,29 @@
             }
 
             analysisButton.addEventListener('click', analyzeActivity);
+
+            // --- Theme Toggle Functionality ---
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const body = document.body;
+
+            // Check for saved theme preference or default to light mode
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            body.setAttribute('data-theme', currentTheme);
+            updateThemeIcon(currentTheme);
+
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+
+            function updateThemeIcon(theme) {
+                themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            }
         });
     </script>
 </body>
