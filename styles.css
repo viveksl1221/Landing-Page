@@ -55,10 +55,12 @@ body {
 
 /* Hero Background with Liquid Glass Effect */
 .hero-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('cristellation_Ultra-realistic_cinematic_photograph_of_a_hands_caf1f6c7-39dd-4ddd-9d4a-072711904635_2.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('./cristellation_Ultra-realistic_cinematic_photograph_of_a_hands_caf1f6c7-39dd-4ddd-9d4a-072711904635_2.png');
     background-size: cover;
     background-position: center;
     position: relative;
+    /* Fallback background color */
+    background-color: #1a1a1a;
 }
 
 /* Liquid Glass Effect Overlay - Minimal Blur for Maximum Image Visibility */
