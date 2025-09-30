@@ -129,55 +129,70 @@
             /* Hero section optimization for iPad */
             .hero-bg {
                 min-height: 100vh;
-                padding: 2rem 0;
+                padding: 3rem 0;
+                display: flex;
+                align-items: center;
             }
             
             .hero-bg .container {
                 max-width: 100%;
-                padding: 0 2rem;
+                padding: 0 3rem;
+                width: 100%;
             }
             
-            /* Grid layout for iPad */
+            /* Grid layout for iPad - better proportions */
             .hero-bg .grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
-                align-items: center;
+                grid-template-columns: 1.2fr 0.8fr;
+                gap: 4rem;
+                align-items: start;
+                max-width: 1200px;
+                margin: 0 auto;
             }
             
             /* Typography optimization for iPad */
             .hero-bg h1 {
-                font-size: 3.5rem;
-                line-height: 1.1;
-                margin-bottom: 1.5rem;
+                font-size: 4rem;
+                line-height: 1.05;
+                margin-bottom: 2rem;
+                font-weight: 800;
             }
             
             .hero-bg h2 {
-                font-size: 1.25rem;
-                line-height: 1.4;
-                margin-bottom: 2rem;
+                font-size: 1.4rem;
+                line-height: 1.5;
+                margin-bottom: 2.5rem;
+                font-weight: 400;
             }
             
-            /* Checklist items for iPad */
+            /* Checklist items for iPad - better spacing */
             .checklist-item {
-                padding: 1rem 1.5rem;
-                font-size: 1.1rem;
-                margin-bottom: 0.75rem;
+                padding: 1.25rem 2rem;
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+                font-weight: 600;
+                display: inline-block;
+                margin-right: 1rem;
             }
             
-            /* Form card optimization for iPad */
+            /* Form card optimization for iPad - more prominent */
             .glass-card {
-                padding: 2rem;
+                padding: 2.5rem;
                 max-width: 100%;
+                margin-top: 1rem;
+                position: sticky;
+                top: 2rem;
             }
             
             .glass-card h3 {
-                font-size: 1.75rem;
-                margin-bottom: 1rem;
+                font-size: 1.9rem;
+                margin-bottom: 1.25rem;
+                font-weight: 700;
             }
             
             .glass-card p {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+                line-height: 1.5;
             }
             
             /* Form inputs for iPad */
