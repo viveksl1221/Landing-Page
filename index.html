@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Launch Your IT Business in Dubai: 0% Tax, 100% Ownership</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -43,7 +43,7 @@
             position: relative;
         }
         
-        /* Liquid glass effect overlay - reduced for better image visibility */
+        /* Liquid glass effect overlay - minimal blur for maximum image visibility */
         .hero-bg::before {
             content: '';
             position: absolute;
@@ -52,13 +52,13 @@
             right: 0;
             bottom: 0;
             background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.05) 0%, 
-                rgba(255, 255, 255, 0.02) 25%, 
-                rgba(255, 255, 255, 0.05) 50%, 
-                rgba(255, 255, 255, 0.02) 75%, 
-                rgba(255, 255, 255, 0.05) 100%);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
+                rgba(255, 255, 255, 0.02) 0%, 
+                rgba(255, 255, 255, 0.01) 25%, 
+                rgba(255, 255, 255, 0.02) 50%, 
+                rgba(255, 255, 255, 0.01) 75%, 
+                rgba(255, 255, 255, 0.02) 100%);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
             border-radius: 0;
             z-index: 1;
         }
@@ -69,21 +69,21 @@
             z-index: 2;
         }
         
-        /* Glass effect for form card - reduced for better background visibility */
+        /* Glass effect for form card - minimal blur for maximum background visibility */
         .glass-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
         
-        /* White outline for checklist items - reduced opacity for better background visibility */
+        /* White outline for checklist items - minimal blur for maximum background visibility */
         .checklist-item {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             border-radius: 12px;
             padding: 12px 20px;
             transition: all 0.3s ease;
@@ -122,6 +122,259 @@
             background: linear-gradient(135deg, #4338ca, #5b21b6);
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+        }
+        
+        /* iPad Optimization Styles */
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            /* Hero section optimization for iPad */
+            .hero-bg {
+                min-height: 100vh;
+                padding: 2rem 0;
+            }
+            
+            .hero-bg .container {
+                max-width: 100%;
+                padding: 0 2rem;
+            }
+            
+            /* Grid layout for iPad */
+            .hero-bg .grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                align-items: center;
+            }
+            
+            /* Typography optimization for iPad */
+            .hero-bg h1 {
+                font-size: 3.5rem;
+                line-height: 1.1;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-bg h2 {
+                font-size: 1.25rem;
+                line-height: 1.4;
+                margin-bottom: 2rem;
+            }
+            
+            /* Checklist items for iPad */
+            .checklist-item {
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            /* Form card optimization for iPad */
+            .glass-card {
+                padding: 2rem;
+                max-width: 100%;
+            }
+            
+            .glass-card h3 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .glass-card p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Form inputs for iPad */
+            .form-input {
+                padding: 1rem;
+                font-size: 1rem;
+                border-radius: 0.75rem;
+            }
+            
+            /* Buttons for iPad */
+            .btn-primary, .btn-secondary {
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
+                border-radius: 0.75rem;
+            }
+            
+            /* Value proposition section for iPad */
+            #value-prop {
+                padding: 4rem 0;
+            }
+            
+            #value-prop h2 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            #value-prop p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+            
+            /* Grid cards for iPad */
+            #value-prop .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            #value-prop .grid > div {
+                padding: 2rem 1.5rem;
+            }
+            
+            #value-prop .grid h3 {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+            
+            #value-prop .grid p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            /* Social proof section for iPad */
+            #social-proof {
+                padding: 4rem 0;
+            }
+            
+            #social-proof h2 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            #social-proof .grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+            
+            /* Testimonial card for iPad */
+            #social-proof .bg-gray-50 {
+                padding: 2.5rem;
+                margin: 0 auto;
+                max-width: 600px;
+            }
+            
+            #social-proof .bg-gray-50 p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+            
+            /* Stats section for iPad */
+            #social-proof .text-6xl {
+                font-size: 4rem;
+            }
+            
+            #social-proof .text-xl {
+                font-size: 1.25rem;
+            }
+            
+            /* Cost comparison section for iPad */
+            #cost-comparison {
+                padding: 4rem 0;
+            }
+            
+            #cost-comparison h2 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            #cost-comparison p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+            
+            .chart-container {
+                height: 350px;
+                margin-top: 2rem;
+            }
+            
+            /* Process section for iPad */
+            #process {
+                padding: 4rem 0;
+            }
+            
+            #process h2 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            #process p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+            
+            #process .flex {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            #process .w-full {
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            #process .w-full h3 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            #process .w-full p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            
+            /* Final CTA section for iPad */
+            #final-cta {
+                padding: 4rem 0;
+            }
+            
+            #final-cta h2 {
+                font-size: 3rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            #final-cta p {
+                font-size: 1.2rem;
+                line-height: 1.6;
+                margin-bottom: 2rem;
+            }
+            
+            #final-cta a {
+                padding: 1.25rem 2.5rem;
+                font-size: 1.25rem;
+                border-radius: 0.75rem;
+            }
+        }
+        
+        /* iPad Pro optimization (1024px and up) */
+        @media screen and (min-width: 1024px) and (max-width: 1366px) {
+            .hero-bg h1 {
+                font-size: 4rem;
+            }
+            
+            .hero-bg h2 {
+                font-size: 1.4rem;
+            }
+            
+            .hero-bg .grid {
+                gap: 4rem;
+            }
+            
+            .glass-card {
+                padding: 2.5rem;
+            }
+            
+            #value-prop .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            #social-proof .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            #process .flex {
+                flex-direction: row;
+                gap: 2rem;
+            }
         }
     </style>
 </head>
