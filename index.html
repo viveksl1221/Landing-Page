@@ -172,6 +172,14 @@
                 font-weight: 600;
                 display: inline-block;
                 margin-right: 1rem;
+                white-space: nowrap;
+                min-width: fit-content;
+            }
+            
+            /* Better checklist container for iPad */
+            .hero-bg .flex.flex-wrap {
+                gap: 1rem;
+                align-items: center;
             }
             
             /* Form card optimization for iPad - more prominent */
@@ -195,18 +203,38 @@
                 line-height: 1.5;
             }
             
-            /* Form inputs for iPad */
+            /* Form inputs for iPad - larger and more touch-friendly */
             .form-input {
-                padding: 1rem;
-                font-size: 1rem;
-                border-radius: 0.75rem;
-            }
-            
-            /* Buttons for iPad */
-            .btn-primary, .btn-secondary {
-                padding: 1rem 1.5rem;
+                padding: 1.25rem 1.5rem;
                 font-size: 1.1rem;
                 border-radius: 0.75rem;
+                border-width: 2px;
+                margin-bottom: 1.25rem;
+            }
+            
+            /* Buttons for iPad - more prominent */
+            .btn-primary, .btn-secondary {
+                padding: 1.25rem 2rem;
+                font-size: 1.2rem;
+                border-radius: 0.75rem;
+                font-weight: 600;
+                margin-bottom: 1.5rem;
+            }
+            
+            /* LLM section for iPad */
+            .glass-card .mt-8 {
+                margin-top: 2rem;
+                padding: 1.5rem;
+            }
+            
+            .glass-card .mt-8 h3 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+            
+            .glass-card .mt-8 p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
             }
             
             /* Value proposition section for iPad */
@@ -411,16 +439,16 @@
                         </h2>
                         
                         <!-- Benefits Bar (matches image layout) -->
-                        <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start text-lg md:text-xl font-semibold">
-                            <div class="checklist-item flex items-center gap-2 text-white">
+                        <div class="mt-8 flex flex-wrap gap-3 justify-center md:justify-start text-lg md:text-xl font-semibold">
+                            <div class="checklist-item flex items-center gap-3 text-white">
                                 <span class="text-green-400 text-2xl">✅</span>
                                 <span>100% Ownership</span>
                             </div>
-                            <div class="checklist-item flex items-center gap-2 text-white">
+                            <div class="checklist-item flex items-center gap-3 text-white">
                                 <span class="text-green-400 text-2xl">✅</span>
                                 <span>Zero Corporate Tax</span>
                             </div>
-                            <div class="checklist-item flex items-center gap-2 text-white">
+                            <div class="checklist-item flex items-center gap-3 text-white">
                                 <span class="text-green-400 text-2xl">✅</span>
                                 <span>Investor Visa</span>
                             </div>
